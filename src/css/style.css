@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.pool-item {
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  background: #eee;
+}
