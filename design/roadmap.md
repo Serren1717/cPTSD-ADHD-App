@@ -23,11 +23,15 @@ Each step is one sitting. Do one, stop, come back later. No step depends on perf
 This is the foundation. Nothing else works without it.
 
 ### 1.1 — Pool data structure
-- [ ] In a JS file, define what a pool item looks like:
+- [x] In a JS file, define what a pool item looks like:
+  - `id` (string — unique identifier for tracking accept/reject patterns later)
   - `name` (string — what the thing is)
   - `state` (which of the five states it belongs to)
   - `effort` (1, 2, or 3 — small, medium, big)
-- [ ] Hardcode 3–5 example items. Console.log them. Done.
+  - `duration` (number — honest estimate in minutes, not aspirational)
+  - `category` (string — e.g. "Self-Care", "Learning", "Responsibility")
+- [x] Hardcode 3–5 example items. Console.log them. Done.
+- [x] Create micro and macro versions of the same activity for different states
 
 ### 1.2 — Pool display
 - [ ] Render the hardcoded items as a visible list on the page
@@ -93,6 +97,23 @@ This is the foundation. Nothing else works without it.
 - [ ] In Blocked, surface effort 1–2
 - [ ] In Activated/Momentum/Grounded, surface all effort levels
 - [ ] This is the rule that makes the app feel safe in low states
+
+### 3.4 — Exit cost filtering
+- [ ] Add `exitCost` field to pool items ("low", "medium", "high")
+- [ ] In Shutdown, never suggest high exit-cost tasks — you may not have the executive function to disengage
+- [ ] In Blocked, limit to low–medium exit cost
+- [ ] This protects against hyperfocus traps in low-energy states
+
+### 3.5 — Task type and forced soothe
+- [ ] Add `type` field to pool items: "productive", "soothe", or "maintenance"
+- [ ] "Soothe" tasks are not productivity — they are nervous system regulation (e.g. "Listen to 1 song")
+- [ ] If the user has been in Momentum for 3+ completed tasks, force-suggest a soothe item
+- [ ] This is burnout prevention — the app should protect you from your own momentum
+
+### 3.6 — Accept/reject tracking
+- [ ] Track which task `id`s are rejected vs accepted
+- [ ] Persist to `localStorage`
+- [ ] This is the foundation for the app "learning" your patterns later
 
 **Commit. Push. You now have the full MVP loop.**
 
