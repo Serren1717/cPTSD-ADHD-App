@@ -53,4 +53,23 @@ const taskPool = [
   }
 ];
 
+// Render the pool as a visible list
+function renderPool() {
+  const container = document.getElementById("pool-list");
+  container.innerHTML = "";
+
+  taskPool.forEach(function (task) {
+    const item = document.createElement("div");
+    item.className = "pool-item";
+    item.innerHTML =
+      "<strong>" + task.name + "</strong>" +
+      " <span class='tag state'>" + task.state + "</span>" +
+      " <span class='tag effort'>Effort " + task.effort + "</span>" +
+      " <span class='tag duration'>" + task.duration + " min</span>" +
+      " <span class='tag category'>" + task.category + "</span>";
+    container.appendChild(item);
+  });
+}
+
+renderPool();
 console.table(taskPool);
